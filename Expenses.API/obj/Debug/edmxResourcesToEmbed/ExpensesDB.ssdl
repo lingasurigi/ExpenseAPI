@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Expenses_ExcelModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Expenses_ExcelModelStoreContainer">
+    <EntitySet Name="Arrears" EntityType="Expenses_ExcelModel.Store.Arrears" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChitDetails" EntityType="Expenses_ExcelModel.Store.ChitDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Chits" EntityType="Expenses_ExcelModel.Store.Chits" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Debits" EntityType="Expenses_ExcelModel.Store.Debits" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RegisteredUsers" EntityType="Expenses_ExcelModel.Store.RegisteredUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="Expenses_ExcelModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Status" EntityType="Expenses_ExcelModel.Store.Status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="Expenses_ExcelModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsersChits" EntityType="Expenses_ExcelModel.Store.UsersChits" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsersUtilities" EntityType="Expenses_ExcelModel.Store.UsersUtilities" store:Type="Tables" store:Schema="dbo" store:Name="UsersUtilities">
+      <DefiningQuery>SELECT 
+      [UsersUtilities].[UserId] AS [UserId], 
+      [UsersUtilities].[UtilityId] AS [UtilityId], 
+      [UsersUtilities].[UtilityAccountNumber] AS [UtilityAccountNumber]
+      FROM [dbo].[UsersUtilities] AS [UsersUtilities]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Utilities" EntityType="Expenses_ExcelModel.Store.Utilities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UtilityPayments" EntityType="Expenses_ExcelModel.Store.UtilityPayments" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__UsersUtil__UserI__6C190EBB" Association="Expenses_ExcelModel.Store.FK__UsersUtil__UserI__6C190EBB">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UsersUtilities" EntitySet="UsersUtilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsersUtil__Utili__6D0D32F4" Association="Expenses_ExcelModel.Store.FK__UsersUtil__Utili__6D0D32F4">
+      <End Role="Utilities" EntitySet="Utilities" />
+      <End Role="UsersUtilities" EntitySet="UsersUtilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Arrears_dbo_Status_StatusId" Association="Expenses_ExcelModel.Store.FK_dbo_Arrears_dbo_Status_StatusId">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Arrears" EntitySet="Arrears" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Arrears_dbo_Users_FromUserId" Association="Expenses_ExcelModel.Store.FK_dbo_Arrears_dbo_Users_FromUserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Arrears" EntitySet="Arrears" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Arrears_dbo_Users_ToUserId" Association="Expenses_ExcelModel.Store.FK_dbo_Arrears_dbo_Users_ToUserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Arrears" EntitySet="Arrears" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ChitDetails_dbo_UsersChits_UsersChitsId" Association="Expenses_ExcelModel.Store.FK_dbo_ChitDetails_dbo_UsersChits_UsersChitsId">
+      <End Role="UsersChits" EntitySet="UsersChits" />
+      <End Role="ChitDetails" EntitySet="ChitDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Debits_dbo_Status_StatusId" Association="Expenses_ExcelModel.Store.FK_dbo_Debits_dbo_Status_StatusId">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Debits" EntitySet="Debits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Debits_dbo_Users_FromUserId" Association="Expenses_ExcelModel.Store.FK_dbo_Debits_dbo_Users_FromUserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Debits" EntitySet="Debits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Debits_dbo_Users_ToUserId" Association="Expenses_ExcelModel.Store.FK_dbo_Debits_dbo_Users_ToUserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Debits" EntitySet="Debits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UsersChits_dbo_Users_AgentId" Association="Expenses_ExcelModel.Store.FK_dbo_UsersChits_dbo_Users_AgentId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UsersChits" EntitySet="UsersChits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UsersChits_dbo_Users_CustomerId" Association="Expenses_ExcelModel.Store.FK_dbo_UsersChits_dbo_Users_CustomerId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UsersChits" EntitySet="UsersChits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UsersUtilities_dbo_Chits_ChitId" Association="Expenses_ExcelModel.Store.FK_dbo_UsersUtilities_dbo_Chits_ChitId">
+      <End Role="Chits" EntitySet="Chits" />
+      <End Role="UsersChits" EntitySet="UsersChits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UtilityPayments_dbo_Status_StatusId" Association="Expenses_ExcelModel.Store.FK_dbo_UtilityPayments_dbo_Status_StatusId">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="UtilityPayments" EntitySet="UtilityPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UtilityPayments_dbo_Users_UserId" Association="Expenses_ExcelModel.Store.FK_dbo_UtilityPayments_dbo_Users_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UtilityPayments" EntitySet="UtilityPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UtilityPayments_dbo_Utilities_UtilityId" Association="Expenses_ExcelModel.Store.FK_dbo_UtilityPayments_dbo_Utilities_UtilityId">
+      <End Role="Utilities" EntitySet="Utilities" />
+      <End Role="UtilityPayments" EntitySet="UtilityPayments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Arrears">
+    <Key>
+      <PropertyRef Name="ArrearsId" />
+    </Key>
+    <Property Name="ArrearsId" Type="int" Nullable="false" />
+    <Property Name="FromUserId" Type="int" Nullable="false" />
+    <Property Name="ToUserId" Type="int" Nullable="false" />
+    <Property Name="GivenDate" Type="datetime" Nullable="false" />
+    <Property Name="PaidDate" Type="datetime" />
+    <Property Name="ArrearAmount" Type="decimal" Nullable="false" />
+    <Property Name="TransactionNumber" Type="varchar" MaxLength="50" />
+    <Property Name="OrderNumber" Type="varchar" MaxLength="50" />
+    <Property Name="CheckNumber" Type="varchar" MaxLength="50" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="Reason" Type="varchar" MaxLength="255" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ChitDetails">
+    <Key>
+      <PropertyRef Name="ChitDetailsId" />
+    </Key>
+    <Property Name="ChitDetailsId" Type="int" Nullable="false" />
+    <Property Name="UsersChitsId" Type="int" Nullable="false" />
+    <Property Name="MessageDate" Type="datetime" />
+    <Property Name="PaidDate" Type="datetime" />
+    <Property Name="PendingAmount" Type="decimal" />
+    <Property Name="ExtraAmount" Type="decimal" />
+    <Property Name="Dividend" Type="decimal" />
+    <Property Name="OtherNumbers" Type="varchar" MaxLength="50" />
+    <Property Name="ReceiptNumber" Type="varchar" MaxLength="50" />
+    <Property Name="CheckNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Comments" Type="varchar" MaxLength="250" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Chits">
+    <Key>
+      <PropertyRef Name="ChitId" />
+    </Key>
+    <Property Name="ChitId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ChitName" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Debits">
+    <Key>
+      <PropertyRef Name="DebitsId" />
+    </Key>
+    <Property Name="DebitsId" Type="int" Nullable="false" />
+    <Property Name="FromUserId" Type="int" Nullable="false" />
+    <Property Name="ToUserId" Type="int" Nullable="false" />
+    <Property Name="PaidDate" Type="datetime" />
+    <Property Name="DebitedAmount" Type="decimal" Nullable="false" />
+    <Property Name="TransactionNumber" Type="varchar" MaxLength="50" />
+    <Property Name="OrderNumber" Type="varchar" MaxLength="50" />
+    <Property Name="CheckNumber" Type="varchar" MaxLength="50" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="Reason" Type="varchar" MaxLength="255" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RegisteredUsers">
+    <Key>
+      <PropertyRef Name="RegisteredUserId" />
+    </Key>
+    <Property Name="RegisteredUserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RegisteredUserName" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="StatusName" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UsersChits">
+    <Key>
+      <PropertyRef Name="UsersChitsId" />
+    </Key>
+    <Property Name="UsersChitsId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AgentId" Type="int" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="ChitId" Type="int" Nullable="false" />
+    <Property Name="PerMonthAmount" Type="decimal" Nullable="false" />
+    <Property Name="IsLiftedOrNot" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Expenses_Excel.dbo.UsersUtilities' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="UsersUtilities">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UtilityId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="UtilityId" Type="int" Nullable="false" />
+    <Property Name="UtilityAccountNumber" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Utilities">
+    <Key>
+      <PropertyRef Name="UtilityId" />
+    </Key>
+    <Property Name="UtilityId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UtitlityName" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UtilityPayments">
+    <Key>
+      <PropertyRef Name="UtilityPaymentId" />
+    </Key>
+    <Property Name="UtilityPaymentId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="UtilityId" Type="int" Nullable="false" />
+    <Property Name="BilledDate" Type="datetime" Nullable="false" />
+    <Property Name="PaidDate" Type="datetime" />
+    <Property Name="ActualAmount" Type="decimal" Nullable="false" />
+    <Property Name="ExtraAmount" Type="decimal" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="Reason" Type="varchar" MaxLength="255" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__UsersUtil__UserI__6C190EBB">
+    <End Role="Users" Type="Expenses_ExcelModel.Store.Users" Multiplicity="1" />
+    <End Role="UsersUtilities" Type="Expenses_ExcelModel.Store.UsersUtilities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UsersUtilities">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsersUtil__Utili__6D0D32F4">
+    <End Role="Utilities" Type="Expenses_ExcelModel.Store.Utilities" Multiplicity="1" />
+    <End Role="UsersUtilities" Type="Expenses_ExcelModel.Store.UsersUtilities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilities">
+        <PropertyRef Name="UtilityId" />
+      </Principal>
+      <Dependent Role="UsersUtilities">
+        <PropertyRef Name="UtilityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Arrears_dbo_Status_StatusId">
+    <End Role="Status" Type="Expenses_ExcelModel.Store.Status" Multiplicity="1" />
+    <End Role="Arrears" Type="Expenses_ExcelModel.Store.Arrears" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Arrears">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Arrears_dbo_Users_FromUserId">
+    <End Role="Users" Type="Expenses_ExcelModel.Store.Users" Multiplicity="1" />
+    <End Role="Arrears" Type="Expenses_ExcelModel.Store.Arrears" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Arrears">
+        <PropertyRef Name="FromUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Arrears_dbo_Users_ToUserId">
+    <End Role="Users" Type="Expenses_ExcelModel.Store.Users" Multiplicity="1" />
+    <End Role="Arrears" Type="Expenses_ExcelModel.Store.Arrears" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Arrears">
+        <PropertyRef Name="ToUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ChitDetails_dbo_UsersChits_UsersChitsId">
+    <End Role="UsersChits" Type="Expenses_ExcelModel.Store.UsersChits" Multiplicity="1" />
+    <End Role="ChitDetails" Type="Expenses_ExcelModel.Store.ChitDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersChits">
+        <PropertyRef Name="UsersChitsId" />
+      </Principal>
+      <Dependent Role="ChitDetails">
+        <PropertyRef Name="UsersChitsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Debits_dbo_Status_StatusId">
+    <End Role="Status" Type="Expenses_ExcelModel.Store.Status" Multiplicity="1" />
+    <End Role="Debits" Type="Expenses_ExcelModel.Store.Debits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Debits">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Debits_dbo_Users_FromUserId">
+    <End Role="Users" Type="Expenses_ExcelModel.Store.Users" Multiplicity="1" />
+    <End Role="Debits" Type="Expenses_ExcelModel.Store.Debits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Debits">
+        <PropertyRef Name="FromUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Debits_dbo_Users_ToUserId">
+    <End Role="Users" Type="Expenses_ExcelModel.Store.Users" Multiplicity="1" />
+    <End Role="Debits" Type="Expenses_ExcelModel.Store.Debits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Debits">
+        <PropertyRef Name="ToUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UsersChits_dbo_Users_AgentId">
+    <End Role="Users" Type="Expenses_ExcelModel.Store.Users" Multiplicity="1" />
+    <End Role="UsersChits" Type="Expenses_ExcelModel.Store.UsersChits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UsersChits">
+        <PropertyRef Name="AgentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UsersChits_dbo_Users_CustomerId">
+    <End Role="Users" Type="Expenses_ExcelModel.Store.Users" Multiplicity="1" />
+    <End Role="UsersChits" Type="Expenses_ExcelModel.Store.UsersChits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UsersChits">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UsersUtilities_dbo_Chits_ChitId">
+    <End Role="Chits" Type="Expenses_ExcelModel.Store.Chits" Multiplicity="1" />
+    <End Role="UsersChits" Type="Expenses_ExcelModel.Store.UsersChits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chits">
+        <PropertyRef Name="ChitId" />
+      </Principal>
+      <Dependent Role="UsersChits">
+        <PropertyRef Name="ChitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UtilityPayments_dbo_Status_StatusId">
+    <End Role="Status" Type="Expenses_ExcelModel.Store.Status" Multiplicity="1" />
+    <End Role="UtilityPayments" Type="Expenses_ExcelModel.Store.UtilityPayments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="UtilityPayments">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UtilityPayments_dbo_Users_UserId">
+    <End Role="Users" Type="Expenses_ExcelModel.Store.Users" Multiplicity="1" />
+    <End Role="UtilityPayments" Type="Expenses_ExcelModel.Store.UtilityPayments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UtilityPayments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UtilityPayments_dbo_Utilities_UtilityId">
+    <End Role="Utilities" Type="Expenses_ExcelModel.Store.Utilities" Multiplicity="1" />
+    <End Role="UtilityPayments" Type="Expenses_ExcelModel.Store.UtilityPayments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilities">
+        <PropertyRef Name="UtilityId" />
+      </Principal>
+      <Dependent Role="UtilityPayments">
+        <PropertyRef Name="UtilityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'Expenses_Excel.dbo.RegisteredUserRoles' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="RegisteredUserRoles">
+        <Property Name="RegisteredUserId" Type="int" />
+        <Property Name="RoleId" Type="int" />
+      </EntityType>-->
+</Schema>

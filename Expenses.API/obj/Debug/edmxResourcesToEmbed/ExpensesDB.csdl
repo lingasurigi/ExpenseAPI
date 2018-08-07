@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Expenses_ExcelModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Expenses_ExcelEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Arrears" EntityType="Expenses_ExcelModel.Arrear" />
+    <EntitySet Name="ChitDetails" EntityType="Expenses_ExcelModel.ChitDetail" />
+    <EntitySet Name="Chits" EntityType="Expenses_ExcelModel.Chit" />
+    <EntitySet Name="Debits" EntityType="Expenses_ExcelModel.Debit" />
+    <EntitySet Name="RegisteredUsers" EntityType="Expenses_ExcelModel.RegisteredUser" />
+    <EntitySet Name="Roles" EntityType="Expenses_ExcelModel.Role" />
+    <EntitySet Name="Status" EntityType="Expenses_ExcelModel.Status" />
+    <EntitySet Name="Users" EntityType="Expenses_ExcelModel.User" />
+    <EntitySet Name="UsersChits" EntityType="Expenses_ExcelModel.UsersChit" />
+    <EntitySet Name="UsersUtilities" EntityType="Expenses_ExcelModel.UsersUtility" />
+    <EntitySet Name="Utilities" EntityType="Expenses_ExcelModel.Utility" />
+    <EntitySet Name="UtilityPayments" EntityType="Expenses_ExcelModel.UtilityPayment" />
+    <AssociationSet Name="FK_dbo_Arrears_dbo_Status_StatusId" Association="Expenses_ExcelModel.FK_dbo_Arrears_dbo_Status_StatusId">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Arrears" EntitySet="Arrears" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Arrears_dbo_Users_FromUserId" Association="Expenses_ExcelModel.FK_dbo_Arrears_dbo_Users_FromUserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Arrears" EntitySet="Arrears" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Arrears_dbo_Users_ToUserId" Association="Expenses_ExcelModel.FK_dbo_Arrears_dbo_Users_ToUserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Arrears" EntitySet="Arrears" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ChitDetails_dbo_UsersChits_UsersChitsId" Association="Expenses_ExcelModel.FK_dbo_ChitDetails_dbo_UsersChits_UsersChitsId">
+      <End Role="UsersChits" EntitySet="UsersChits" />
+      <End Role="ChitDetails" EntitySet="ChitDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UsersUtilities_dbo_Chits_ChitId" Association="Expenses_ExcelModel.FK_dbo_UsersUtilities_dbo_Chits_ChitId">
+      <End Role="Chits" EntitySet="Chits" />
+      <End Role="UsersChits" EntitySet="UsersChits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Debits_dbo_Status_StatusId" Association="Expenses_ExcelModel.FK_dbo_Debits_dbo_Status_StatusId">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Debits" EntitySet="Debits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Debits_dbo_Users_FromUserId" Association="Expenses_ExcelModel.FK_dbo_Debits_dbo_Users_FromUserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Debits" EntitySet="Debits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Debits_dbo_Users_ToUserId" Association="Expenses_ExcelModel.FK_dbo_Debits_dbo_Users_ToUserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Debits" EntitySet="Debits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UtilityPayments_dbo_Status_StatusId" Association="Expenses_ExcelModel.FK_dbo_UtilityPayments_dbo_Status_StatusId">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="UtilityPayments" EntitySet="UtilityPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsersUtil__UserI__6C190EBB" Association="Expenses_ExcelModel.FK__UsersUtil__UserI__6C190EBB">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UsersUtilities" EntitySet="UsersUtilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UsersChits_dbo_Users_AgentId" Association="Expenses_ExcelModel.FK_dbo_UsersChits_dbo_Users_AgentId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UsersChits" EntitySet="UsersChits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UsersChits_dbo_Users_CustomerId" Association="Expenses_ExcelModel.FK_dbo_UsersChits_dbo_Users_CustomerId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UsersChits" EntitySet="UsersChits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UtilityPayments_dbo_Users_UserId" Association="Expenses_ExcelModel.FK_dbo_UtilityPayments_dbo_Users_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UtilityPayments" EntitySet="UtilityPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsersUtil__Utili__6D0D32F4" Association="Expenses_ExcelModel.FK__UsersUtil__Utili__6D0D32F4">
+      <End Role="Utilities" EntitySet="Utilities" />
+      <End Role="UsersUtilities" EntitySet="UsersUtilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UtilityPayments_dbo_Utilities_UtilityId" Association="Expenses_ExcelModel.FK_dbo_UtilityPayments_dbo_Utilities_UtilityId">
+      <End Role="Utilities" EntitySet="Utilities" />
+      <End Role="UtilityPayments" EntitySet="UtilityPayments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Arrear">
+    <Key>
+      <PropertyRef Name="ArrearsId" />
+    </Key>
+    <Property Name="ArrearsId" Type="Int32" Nullable="false" />
+    <Property Name="FromUserId" Type="Int32" Nullable="false" />
+    <Property Name="ToUserId" Type="Int32" Nullable="false" />
+    <Property Name="GivenDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="ArrearAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="TransactionNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OrderNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CheckNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="Reason" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Status" Relationship="Expenses_ExcelModel.FK_dbo_Arrears_dbo_Status_StatusId" FromRole="Arrears" ToRole="Status" />
+    <NavigationProperty Name="User" Relationship="Expenses_ExcelModel.FK_dbo_Arrears_dbo_Users_FromUserId" FromRole="Arrears" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Expenses_ExcelModel.FK_dbo_Arrears_dbo_Users_ToUserId" FromRole="Arrears" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="ChitDetail">
+    <Key>
+      <PropertyRef Name="ChitDetailsId" />
+    </Key>
+    <Property Name="ChitDetailsId" Type="Int32" Nullable="false" />
+    <Property Name="UsersChitsId" Type="Int32" Nullable="false" />
+    <Property Name="MessageDate" Type="DateTime" Precision="3" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="PendingAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ExtraAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Dividend" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="OtherNumbers" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ReceiptNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CheckNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Comments" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UsersChit" Relationship="Expenses_ExcelModel.FK_dbo_ChitDetails_dbo_UsersChits_UsersChitsId" FromRole="ChitDetails" ToRole="UsersChits" />
+  </EntityType>
+  <EntityType Name="Chit">
+    <Key>
+      <PropertyRef Name="ChitId" />
+    </Key>
+    <Property Name="ChitId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ChitName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UsersChits" Relationship="Expenses_ExcelModel.FK_dbo_UsersUtilities_dbo_Chits_ChitId" FromRole="Chits" ToRole="UsersChits" />
+  </EntityType>
+  <EntityType Name="Debit">
+    <Key>
+      <PropertyRef Name="DebitsId" />
+    </Key>
+    <Property Name="DebitsId" Type="Int32" Nullable="false" />
+    <Property Name="FromUserId" Type="Int32" Nullable="false" />
+    <Property Name="ToUserId" Type="Int32" Nullable="false" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="DebitedAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="TransactionNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OrderNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CheckNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="Reason" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Status" Relationship="Expenses_ExcelModel.FK_dbo_Debits_dbo_Status_StatusId" FromRole="Debits" ToRole="Status" />
+    <NavigationProperty Name="User" Relationship="Expenses_ExcelModel.FK_dbo_Debits_dbo_Users_FromUserId" FromRole="Debits" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Expenses_ExcelModel.FK_dbo_Debits_dbo_Users_ToUserId" FromRole="Debits" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="RegisteredUser">
+    <Key>
+      <PropertyRef Name="RegisteredUserId" />
+    </Key>
+    <Property Name="RegisteredUserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="RegisteredUserName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="StatusName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Arrears" Relationship="Expenses_ExcelModel.FK_dbo_Arrears_dbo_Status_StatusId" FromRole="Status" ToRole="Arrears" />
+    <NavigationProperty Name="Debits" Relationship="Expenses_ExcelModel.FK_dbo_Debits_dbo_Status_StatusId" FromRole="Status" ToRole="Debits" />
+    <NavigationProperty Name="UtilityPayments" Relationship="Expenses_ExcelModel.FK_dbo_UtilityPayments_dbo_Status_StatusId" FromRole="Status" ToRole="UtilityPayments" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Arrears" Relationship="Expenses_ExcelModel.FK_dbo_Arrears_dbo_Users_FromUserId" FromRole="Users" ToRole="Arrears" />
+    <NavigationProperty Name="Arrears1" Relationship="Expenses_ExcelModel.FK_dbo_Arrears_dbo_Users_ToUserId" FromRole="Users" ToRole="Arrears" />
+    <NavigationProperty Name="Debits" Relationship="Expenses_ExcelModel.FK_dbo_Debits_dbo_Users_FromUserId" FromRole="Users" ToRole="Debits" />
+    <NavigationProperty Name="Debits1" Relationship="Expenses_ExcelModel.FK_dbo_Debits_dbo_Users_ToUserId" FromRole="Users" ToRole="Debits" />
+    <NavigationProperty Name="UsersUtilities" Relationship="Expenses_ExcelModel.FK__UsersUtil__UserI__6C190EBB" FromRole="Users" ToRole="UsersUtilities" />
+    <NavigationProperty Name="UsersChits" Relationship="Expenses_ExcelModel.FK_dbo_UsersChits_dbo_Users_AgentId" FromRole="Users" ToRole="UsersChits" />
+    <NavigationProperty Name="UsersChits1" Relationship="Expenses_ExcelModel.FK_dbo_UsersChits_dbo_Users_CustomerId" FromRole="Users" ToRole="UsersChits" />
+    <NavigationProperty Name="UtilityPayments" Relationship="Expenses_ExcelModel.FK_dbo_UtilityPayments_dbo_Users_UserId" FromRole="Users" ToRole="UtilityPayments" />
+  </EntityType>
+  <EntityType Name="UsersChit">
+    <Key>
+      <PropertyRef Name="UsersChitsId" />
+    </Key>
+    <Property Name="UsersChitsId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="AgentId" Type="Int32" Nullable="false" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="ChitId" Type="Int32" Nullable="false" />
+    <Property Name="PerMonthAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="IsLiftedOrNot" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ChitDetails" Relationship="Expenses_ExcelModel.FK_dbo_ChitDetails_dbo_UsersChits_UsersChitsId" FromRole="UsersChits" ToRole="ChitDetails" />
+    <NavigationProperty Name="Chit" Relationship="Expenses_ExcelModel.FK_dbo_UsersUtilities_dbo_Chits_ChitId" FromRole="UsersChits" ToRole="Chits" />
+    <NavigationProperty Name="User" Relationship="Expenses_ExcelModel.FK_dbo_UsersChits_dbo_Users_AgentId" FromRole="UsersChits" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Expenses_ExcelModel.FK_dbo_UsersChits_dbo_Users_CustomerId" FromRole="UsersChits" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="UsersUtility">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UtilityId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="UtilityId" Type="Int32" Nullable="false" />
+    <Property Name="UtilityAccountNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="User" Relationship="Expenses_ExcelModel.FK__UsersUtil__UserI__6C190EBB" FromRole="UsersUtilities" ToRole="Users" />
+    <NavigationProperty Name="Utility" Relationship="Expenses_ExcelModel.FK__UsersUtil__Utili__6D0D32F4" FromRole="UsersUtilities" ToRole="Utilities" />
+  </EntityType>
+  <EntityType Name="Utility">
+    <Key>
+      <PropertyRef Name="UtilityId" />
+    </Key>
+    <Property Name="UtilityId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UtitlityName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UsersUtilities" Relationship="Expenses_ExcelModel.FK__UsersUtil__Utili__6D0D32F4" FromRole="Utilities" ToRole="UsersUtilities" />
+    <NavigationProperty Name="UtilityPayments" Relationship="Expenses_ExcelModel.FK_dbo_UtilityPayments_dbo_Utilities_UtilityId" FromRole="Utilities" ToRole="UtilityPayments" />
+  </EntityType>
+  <EntityType Name="UtilityPayment">
+    <Key>
+      <PropertyRef Name="UtilityPaymentId" />
+    </Key>
+    <Property Name="UtilityPaymentId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="UtilityId" Type="Int32" Nullable="false" />
+    <Property Name="BilledDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="ActualAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ExtraAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="Reason" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Status" Relationship="Expenses_ExcelModel.FK_dbo_UtilityPayments_dbo_Status_StatusId" FromRole="UtilityPayments" ToRole="Status" />
+    <NavigationProperty Name="User" Relationship="Expenses_ExcelModel.FK_dbo_UtilityPayments_dbo_Users_UserId" FromRole="UtilityPayments" ToRole="Users" />
+    <NavigationProperty Name="Utility" Relationship="Expenses_ExcelModel.FK_dbo_UtilityPayments_dbo_Utilities_UtilityId" FromRole="UtilityPayments" ToRole="Utilities" />
+  </EntityType>
+  <Association Name="FK_dbo_Arrears_dbo_Status_StatusId">
+    <End Role="Status" Type="Expenses_ExcelModel.Status" Multiplicity="1" />
+    <End Role="Arrears" Type="Expenses_ExcelModel.Arrear" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Arrears">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Arrears_dbo_Users_FromUserId">
+    <End Role="Users" Type="Expenses_ExcelModel.User" Multiplicity="1" />
+    <End Role="Arrears" Type="Expenses_ExcelModel.Arrear" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Arrears">
+        <PropertyRef Name="FromUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Arrears_dbo_Users_ToUserId">
+    <End Role="Users" Type="Expenses_ExcelModel.User" Multiplicity="1" />
+    <End Role="Arrears" Type="Expenses_ExcelModel.Arrear" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Arrears">
+        <PropertyRef Name="ToUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ChitDetails_dbo_UsersChits_UsersChitsId">
+    <End Role="UsersChits" Type="Expenses_ExcelModel.UsersChit" Multiplicity="1" />
+    <End Role="ChitDetails" Type="Expenses_ExcelModel.ChitDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersChits">
+        <PropertyRef Name="UsersChitsId" />
+      </Principal>
+      <Dependent Role="ChitDetails">
+        <PropertyRef Name="UsersChitsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UsersUtilities_dbo_Chits_ChitId">
+    <End Role="Chits" Type="Expenses_ExcelModel.Chit" Multiplicity="1" />
+    <End Role="UsersChits" Type="Expenses_ExcelModel.UsersChit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chits">
+        <PropertyRef Name="ChitId" />
+      </Principal>
+      <Dependent Role="UsersChits">
+        <PropertyRef Name="ChitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Debits_dbo_Status_StatusId">
+    <End Role="Status" Type="Expenses_ExcelModel.Status" Multiplicity="1" />
+    <End Role="Debits" Type="Expenses_ExcelModel.Debit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Debits">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Debits_dbo_Users_FromUserId">
+    <End Role="Users" Type="Expenses_ExcelModel.User" Multiplicity="1" />
+    <End Role="Debits" Type="Expenses_ExcelModel.Debit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Debits">
+        <PropertyRef Name="FromUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Debits_dbo_Users_ToUserId">
+    <End Role="Users" Type="Expenses_ExcelModel.User" Multiplicity="1" />
+    <End Role="Debits" Type="Expenses_ExcelModel.Debit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Debits">
+        <PropertyRef Name="ToUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UtilityPayments_dbo_Status_StatusId">
+    <End Role="Status" Type="Expenses_ExcelModel.Status" Multiplicity="1" />
+    <End Role="UtilityPayments" Type="Expenses_ExcelModel.UtilityPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="UtilityPayments">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsersUtil__UserI__6C190EBB">
+    <End Role="Users" Type="Expenses_ExcelModel.User" Multiplicity="1" />
+    <End Role="UsersUtilities" Type="Expenses_ExcelModel.UsersUtility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UsersUtilities">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UsersChits_dbo_Users_AgentId">
+    <End Role="Users" Type="Expenses_ExcelModel.User" Multiplicity="1" />
+    <End Role="UsersChits" Type="Expenses_ExcelModel.UsersChit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UsersChits">
+        <PropertyRef Name="AgentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UsersChits_dbo_Users_CustomerId">
+    <End Role="Users" Type="Expenses_ExcelModel.User" Multiplicity="1" />
+    <End Role="UsersChits" Type="Expenses_ExcelModel.UsersChit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UsersChits">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UtilityPayments_dbo_Users_UserId">
+    <End Role="Users" Type="Expenses_ExcelModel.User" Multiplicity="1" />
+    <End Role="UtilityPayments" Type="Expenses_ExcelModel.UtilityPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UtilityPayments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsersUtil__Utili__6D0D32F4">
+    <End Role="Utilities" Type="Expenses_ExcelModel.Utility" Multiplicity="1" />
+    <End Role="UsersUtilities" Type="Expenses_ExcelModel.UsersUtility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilities">
+        <PropertyRef Name="UtilityId" />
+      </Principal>
+      <Dependent Role="UsersUtilities">
+        <PropertyRef Name="UtilityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UtilityPayments_dbo_Utilities_UtilityId">
+    <End Role="Utilities" Type="Expenses_ExcelModel.Utility" Multiplicity="1" />
+    <End Role="UtilityPayments" Type="Expenses_ExcelModel.UtilityPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilities">
+        <PropertyRef Name="UtilityId" />
+      </Principal>
+      <Dependent Role="UtilityPayments">
+        <PropertyRef Name="UtilityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

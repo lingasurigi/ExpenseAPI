@@ -1,0 +1,10 @@
+E:\My Projects\WebAPI Projects\TokenBasedAuthenticationSample\TokenBasedAuthenticationSample\Expenses.Models\bin\Debug\Expenses.Models.dll
+E:\My Projects\WebAPI Projects\TokenBasedAuthenticationSample\TokenBasedAuthenticationSample\Expenses.Models\bin\Debug\Expenses.Models.pdb
+E:\My Projects\WebAPI Projects\TokenBasedAuthenticationSample\TokenBasedAuthenticationSample\Expenses.Models\obj\Debug\Expenses.Models.csprojResolveAssemblyReference.cache
+E:\My Projects\WebAPI Projects\TokenBasedAuthenticationSample\TokenBasedAuthenticationSample\Expenses.Models\obj\Debug\Expenses.Models.dll
+E:\My Projects\WebAPI Projects\TokenBasedAuthenticationSample\TokenBasedAuthenticationSample\Expenses.Models\obj\Debug\Expenses.Models.pdb
+E:\My Projects\WebAPI Projects\ExpensesProject\ExpensesProject\Expenses.Models\bin\Debug\Expenses.Models.dll
+E:\My Projects\WebAPI Projects\ExpensesProject\ExpensesProject\Expenses.Models\bin\Debug\Expenses.Models.pdb
+E:\My Projects\WebAPI Projects\ExpensesProject\ExpensesProject\Expenses.Models\obj\Debug\Expenses.Models.csprojResolveAssemblyReference.cache
+E:\My Projects\WebAPI Projects\ExpensesProject\ExpensesProject\Expenses.Models\obj\Debug\Expenses.Models.dll
+E:\My Projects\WebAPI Projects\ExpensesProject\ExpensesProject\Expenses.Models\obj\Debug\Expenses.Models.pdb

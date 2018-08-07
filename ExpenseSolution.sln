@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expenses.Models", "Expenses.Models\Expenses.Models.csproj", "{B1CC5893-6F39-44ED-9E22-7223B8B1BA82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expense.API", "Expenses.API\Expense.API.csproj", "{753DD214-BF4B-428A-B516-D9E434F22BF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1CC5893-6F39-44ED-9E22-7223B8B1BA82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1CC5893-6F39-44ED-9E22-7223B8B1BA82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1CC5893-6F39-44ED-9E22-7223B8B1BA82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1CC5893-6F39-44ED-9E22-7223B8B1BA82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{753DD214-BF4B-428A-B516-D9E434F22BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{753DD214-BF4B-428A-B516-D9E434F22BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{753DD214-BF4B-428A-B516-D9E434F22BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{753DD214-BF4B-428A-B516-D9E434F22BF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

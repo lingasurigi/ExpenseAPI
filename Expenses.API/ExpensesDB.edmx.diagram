@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8a9323d565344df9aa04e61c59f177e6" Name="Diagram1" ZoomLevel="15">
+        <EntityTypeShape EntityType="Expenses_ExcelModel.Arrear" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Expenses_ExcelModel.ChitDetail" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Expenses_ExcelModel.Chit" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Expenses_ExcelModel.Debit" Width="1.5" PointX="6" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Expenses_ExcelModel.RegisteredUser" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Expenses_ExcelModel.Role" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Expenses_ExcelModel.Status" Width="1.5" PointX="3.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="Expenses_ExcelModel.User" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Expenses_ExcelModel.UsersChit" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Expenses_ExcelModel.UsersUtility" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Expenses_ExcelModel.Utility" Width="1.5" PointX="3.75" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Expenses_ExcelModel.UtilityPayment" Width="1.5" PointX="6" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK_dbo_Arrears_dbo_Status_StatusId" ManuallyRouted="false" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK_dbo_Arrears_dbo_Users_FromUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK_dbo_Arrears_dbo_Users_ToUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK_dbo_ChitDetails_dbo_UsersChits_UsersChitsId" ManuallyRouted="false" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK_dbo_UsersUtilities_dbo_Chits_ChitId" ManuallyRouted="false" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK_dbo_Debits_dbo_Status_StatusId" ManuallyRouted="false" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK_dbo_Debits_dbo_Users_FromUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK_dbo_Debits_dbo_Users_ToUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK_dbo_UtilityPayments_dbo_Status_StatusId" ManuallyRouted="false" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK__UsersUtil__UserI__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK_dbo_UsersChits_dbo_Users_AgentId" ManuallyRouted="false" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK_dbo_UsersChits_dbo_Users_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK_dbo_UtilityPayments_dbo_Users_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK__UsersUtil__Utili__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="Expenses_ExcelModel.FK_dbo_UtilityPayments_dbo_Utilities_UtilityId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
